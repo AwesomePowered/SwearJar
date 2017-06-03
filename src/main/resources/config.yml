@@ -1,0 +1,13 @@
+#Rules can be found in rules.yml, if you would like to make your own rule, use this site: http://poweredbyawesome.net/sj/ and click the 'run' button
+#Default amount taken per swear.
+AmountTaken: 10
+#Should we charge per word or per chat message? true means spam
+PerWord: false
+#Should we send them a charge message?
+SendMessage: true
+#Charge Message
+Message: '&f[&cSwearJar&f] &bYou have been charged &4$%amount%&b for saying &6%word%'
+#Commands to run when the player ran out of money.
+NoMoney:
+  - "kick %player% &cYou don't have enough money to swear!"
+  - 'broadcast &f%player% &awas kicked because he ran out of money swearing'

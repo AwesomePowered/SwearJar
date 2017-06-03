@@ -1,0 +1,63 @@
+SampleRule:
+  #This is where you put your regex rule, if you would like to make your own rule, use this site: http://poweredbyawesome.net/sj/ and click the 'run' button
+  match: '\b(4+(\W|\d|_)*a+(\W|\d|_)*3+(\W|\d|_)*e+(\W|\d|_)*8+(\W|\d|_)*9+(\W|\d|_)*6+(\W|\d|_)*b+(\W|\d|_)*c+(\W|\d|_)*5+(\W|\d|_)*5+(\W|\d|_)*c+(\W|\d|_)*)'
+  #Cost can also be defined per rule.
+  cost: 100
+anal:
+  match: '\b(a+(\W|\d|_)*n+(\W|\d|_)*a+(\W|\d|_)*l+(\W|\d|_)*)'
+arse:
+  match: '\b(a+(\W|\d|_)*r+(\W|\d|_)*s+(\W|\d|_)*e+(\W|\d|_)*)'
+ass:
+  match: '\b(a+(\W|\d|_)*s+(\W|\d|_)*s+(\W|\d|_)*)'
+bitch:
+  match: '\b(b+(\W|\d|_)*i+(\W|\d|_)*t+(\W|\d|_)*c+(\W|\d|_)*h+(\W|\d|_)*)'
+cock:
+  match: '\b(c+(\W|\d|_)*o+(\W|\d|_)*c+(\W|\d|_)*k+(\W|\d|_)*)'
+cretin:
+  match: '\b(c+(\W|\d|_)*r+(\W|\d|_)*e+(\W|\d|_)*t+(\W|\d|_)*i+(\W|\d|_)*n+(\W|\d|_)*)'
+cuck:
+  match: '\b(c+(\W|\d|_)*u+(\W|\d|_)*c+(\W|\d|_)*k+(\W|\d|_)*)'
+cum:
+  match: '\b(c+(\W|\d|_)*u+(\W|\d|_)*m+(\W|\d|_)*)'
+cunt:
+  match: '\b(c+(\W|\d|_)*u+(\W|\d|_)*n+(\W|\d|_)*t+(\W|\d|_)*)'
+dick:
+  match: '\b(d+(\W|\d|_)*i+(\W|\d|_)*c+(\W|\d|_)*k+(\W|\d|_)*)'
+electroniccat:
+  match: '\b(e+(\W|\d|_)*l+(\W|\d|_)*e+(\W|\d|_)*c+(\W|\d|_)*t+(\W|\d|_)*r+(\W|\d|_)*o+(\W|\d|_)*n+(\W|\d|_)*i+(\W|\d|_)*c+(\W|\d|_)*c+(\W|\d|_)*a+(\W|\d|_)*t+(\W|\d|_)*)'
+fag:
+  match: '\b(f+(\W|\d|_)*a+(\W|\d|_)*g+(\W|\d|_)*)'
+fuck:
+  match: '\b(f+(\W|\d|_)*u+(\W|\d|_)*c+(\W|\d|_)*k+(\W|\d|_)*)'
+horny:
+  match: '\b(h+(\W|\d|_)*o+(\W|\d|_)*r+(\W|\d|_)*n+(\W|\d|_)*y+(\W|\d|_)*)'
+jerk:
+  match: '\b(j+(\W|\d|_)*e+(\W|\d|_)*r+(\W|\d|_)*k+(\W|\d|_)*)'
+nigga:
+  match: '\b(n+(\W|\d|_)*i+(\W|\d|_)*g+(\W|\d|_)*g+(\W|\d|_)*a+(\W|\d|_)*)'
+nigger:
+  match: '\b(n+(\W|\d|_)*i+(\W|\d|_)*g+(\W|\d|_)*g+(\W|\d|_)*e+(\W|\d|_)*r+(\W|\d|_)*)'
+pedo:
+  match: '\b(p+(\W|\d|_)*e+(\W|\d|_)*d+(\W|\d|_)*o+(\W|\d|_)*)'
+pussy:
+  match: '\b(p+(\W|\d|_)*u+(\W|\d|_)*s+(\W|\d|_)*s+(\W|\d|_)*y+(\W|\d|_)*)'
+retard:
+  match: '\b(r+(\W|\d|_)*e+(\W|\d|_)*t+(\W|\d|_)*a+(\W|\d|_)*r+(\W|\d|_)*d+(\W|\d|_)*)'
+shit:
+  match: '\b(s+(\W|\d|_)*h+(\W|\d|_)*i+(\W|\d|_)*t+(\W|\d|_)*)'
+slut:
+  match: '\b(s+(\W|\d|_)*l+(\W|\d|_)*u+(\W|\d|_)*t+(\W|\d|_)*)'
+tits:
+  match: '\b(t+(\W|\d|_)*i+(\W|\d|_)*t+(\W|\d|_)*s+(\W|\d|_)*)'
+titties:
+  match: '\b(t+(\W|\d|_)*i+(\W|\d|_)*t+(\W|\d|_)*t+(\W|\d|_)*i+(\W|\d|_)*e+(\W|\d|_)*s+(\W|\d|_)*)'
+trump:
+  match: '\b(t+(\W|\d|_)*r+(\W|\d|_)*u+(\W|\d|_)*m+(\W|\d|_)*p+(\W|\d|_)*)'
+vagina:
+  match: '\b(v+(\W|\d|_)*a+(\W|\d|_)*g+(\W|\d|_)*i+(\W|\d|_)*n+(\W|\d|_)*a+(\W|\d|_)*)'
+wanker:
+  match: '\b(w+(\W|\d|_)*a+(\W|\d|_)*n+(\W|\d|_)*k+(\W|\d|_)*e+(\W|\d|_)*r+(\W|\d|_)*)'
+whore:
+  match: '\b(w+(\W|\d|_)*h+(\W|\d|_)*o+(\W|\d|_)*r+(\W|\d|_)*e+(\W|\d|_)*)'
+blowhandjob:
+  match: '\b(b+(\W|\d|_)*(1|l)+(\W|\d|_)*(0|o)+(\W|\d|_)*w+(\W|\d|_)*j+(\W|\d|_)*(0|o)+(\W|\d|_)*b+(\W|\d|_)*(s|z)*(\W|\d|_)*)\b|\b(b+(\W|\d|_)*j+(\W|\d|_)*)\b|\b(b+(\W|\d|_)*j+(\W|\d|_)*(0|o)+(\W|\d|_)*b+(\W|\d|_)*(s|z)*(\W|\d|_)*)\b|(f+(\W|\d|_)*(3|e)+(\W|\d|_)*(1|l)*(\W|\d|_)*(1|l)+(\W|\d|_)*a+(\W|\d|_)*(7|t)+(\W|\d|_)*(1|i)+(\W|\d|_)*(0|o)+(\W|\d|_)*)|\b(h+(\W|\d|_)*a+(\W|\d|_)*n+(\W|\d|_)*d+(\W|\d|_)*j+(\W|\d|_)*(0|o)+(\W|\d|_)*b+(\W|\d|_)*(s|z)*(\W|\d|_)*)\b'

@@ -1,0 +1,5 @@
+name: SwearJar
+version: ${project.version}
+main: net.poweredbyawesome.swearjar.SwearJar
+depend: [Vault]
+authors: [LaxWasHere]
