@@ -68,13 +68,13 @@ public final class SwearJar extends JavaPlugin implements Listener {
                 if (mat.find()) {
                     int swearPrice = getSwearPrice(swear);
                     if (perWord) {
-                        EconomyResponse r = econ.withdrawPlayer(p, getSwearPrice(swear)); //I should make a jar ¯\_(ツ)_/¯
+                        EconomyResponse r = econ.withdrawPlayer(p, swearPrice); //I should make a jar ¯\_(ツ)_/¯
                         if (!r.transactionSuccess()) {
                             dishPunishment(p);
                         }
                         if (sendMessage) p.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("Message").replace("%amount%", String.valueOf(swearPrice)).replace("%word%", swear.getName())));
                     } else {
-                        cost += getSwearPrice(swear);
+                        cost += swearPrice;
                         swearList.add(swear.getName());
                     }
                 }
@@ -101,10 +101,9 @@ public final class SwearJar extends JavaPlugin implements Listener {
 
     public void loadSwears() {
         for (String s : getRulesConfig().getKeys(false)) {
-            String name = s;
             String pattern = getRulesConfig().getString(s+".match");
             int cost = getRulesConfig().getInt(s+".cost");
-            swears.add(new Swear(this,name,pattern,cost));
+            swears.add(new Swear(this,s,pattern,cost));
         }
     }
 
@@ -117,9 +116,7 @@ public final class SwearJar extends JavaPlugin implements Listener {
             FileConfiguration rulez = new YamlConfiguration();
             rulez.load(leFile);
             return rulez;
-        } catch (InvalidConfigurationException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (InvalidConfigurationException | IOException e) {
             e.printStackTrace();
         }
         return null;
