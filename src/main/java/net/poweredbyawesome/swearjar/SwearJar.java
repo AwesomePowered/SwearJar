@@ -2,6 +2,7 @@ package net.poweredbyawesome.swearjar;
 
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.economy.EconomyResponse;
+import net.poweredbyawesome.swearjar.events.PlayerChargeEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.InvalidConfigurationException;
@@ -60,14 +61,17 @@ public final class SwearJar extends JavaPlugin implements Listener {
     }
 
     public void invoicePlayer(Player p, String message) {
-        int cost = 0;
+        double cost = 0;
         List<String> swearList = new ArrayList<>();
         for (String s : message.split(" ")) {
             for (Swear swear : swears) {
                 Matcher mat = Pattern.compile(swear.getPattern()).matcher(s.toLowerCase());
                 if (mat.find()) {
-                    int swearPrice = getSwearPrice(swear);
+                    double swearPrice = getSwearPrice(swear);
                     if (perWord) {
+                        PlayerChargeEvent chargeEvent = new PlayerChargeEvent(p, swearPrice, true);
+                        Bukkit.getServer().getPluginManager().callEvent(chargeEvent);
+                        swearPrice = chargeEvent.getSwearPrice();
                         EconomyResponse r = econ.withdrawPlayer(p, swearPrice); //I should make a jar ¯\_(ツ)_/¯
                         if (!r.transactionSuccess()) {
                             dishPunishment(p);
@@ -81,6 +85,9 @@ public final class SwearJar extends JavaPlugin implements Listener {
             }
         }
         if (cost > 0) {
+            PlayerChargeEvent chargeEvent = new PlayerChargeEvent(p, cost, false);
+            Bukkit.getServer().getPluginManager().callEvent(chargeEvent);
+            cost = chargeEvent.getSwearPrice();
             EconomyResponse r = econ.withdrawPlayer(p, cost);
             if (!r.transactionSuccess()) {
                 dishPunishment(p);
@@ -89,7 +96,7 @@ public final class SwearJar extends JavaPlugin implements Listener {
         }
     }
 
-    public int getSwearPrice (Swear swear) {
+    public double getSwearPrice (Swear swear) {
         return (swear.getPrice() <= 0) ? defaultCost : swear.getPrice();
     }
 
@@ -102,7 +109,7 @@ public final class SwearJar extends JavaPlugin implements Listener {
     public void loadSwears() {
         for (String s : getRulesConfig().getKeys(false)) {
             String pattern = getRulesConfig().getString(s+".match");
-            int cost = getRulesConfig().getInt(s+".cost");
+            double cost = getRulesConfig().getDouble(s+".cost");
             swears.add(new Swear(this,s,pattern,cost));
         }
     }

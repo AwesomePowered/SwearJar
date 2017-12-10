@@ -5,9 +5,9 @@ public class Swear {
     private SwearJar plugin;
     private String name;
     private String pattern;
-    private int price;
+    private double price;
 
-    public Swear(SwearJar plugin, String swear, String pattern, int price) {
+    public Swear(SwearJar plugin, String swear, String pattern, double price) {
         this.plugin = plugin;
         this.name = swear;
         this.pattern = pattern;
@@ -22,7 +22,7 @@ public class Swear {
         return this.pattern;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return this.price;
     }
 }
